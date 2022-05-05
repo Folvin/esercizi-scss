@@ -1,0 +1,24 @@
+div {
+  border: solid 1px red;
+  padding: 10px;
+}
+div h1 {
+  color: green;
+  text-decoration: underline solid blue;
+  text-align: center;
+}
+div section {
+  display: flex;
+}
+div section article {
+  border: solid 1px green;
+  text-align: center;
+}
+div section article:nth-child(2n+1) {
+  color: blue;
+}
+div section article:nth-child(2n+2) {
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
