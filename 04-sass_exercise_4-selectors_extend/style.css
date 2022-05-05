@@ -21,7 +21,8 @@ body div h1 {
 }
 body div h2 {
   padding: 1rem;
-  border: solid red;
+  border: solid red 0.0625rem;
+  align-self: center;
 }
 body div section:nth-of-type(1) {
   display: flex;
