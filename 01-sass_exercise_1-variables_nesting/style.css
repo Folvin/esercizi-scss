@@ -1,23 +1,29 @@
-div {
+body {
+  margin: 0;
+  padding: 15px;
+}
+body div {
   border: solid 1px red;
-  padding: 10px;
+  padding: 15px;
 }
-div h1 {
+body div h1 {
   color: green;
-  text-decoration: underline solid blue;
   text-align: center;
+  text-decoration: underline solid 1px blue;
+  text-underline-offset: 7px;
 }
-div section {
+body div section {
   display: flex;
 }
-div section article {
+body div section article {
   border: solid 1px green;
   text-align: center;
+  padding: 15px;
 }
-div section article:nth-child(2n+1) {
+body div section article:nth-child(2n+1) {
   color: blue;
 }
-div section article:nth-child(2n+2) {
+body div section article:nth-child(2n+2) {
   color: red;
 }
 

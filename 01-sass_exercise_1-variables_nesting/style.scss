@@ -3,28 +3,37 @@ $g: green;
 $b: blue;
 $border: solid 1px;
 
-div {
-    border: $border $r;
-    padding: 10px;
+body {
+    margin: 0;
+    padding: 15px;
 
-    h1 {
-        color: $g;
-        text-decoration: underline solid $b;
-        text-align: center;
-    }
+    div {
+        border: $border $r;
+        padding: 15px;
 
-    section {
-        display: flex;
-
-        article {
-            border: $border $g;
+        h1 {
+            color: $g;
             text-align: center;
+            text-decoration: underline solid 1px $b;
+            text-underline-offset: 7px;
         }
-        article:nth-child(2n+1) {
-            color: $b;
-        }
-        article:nth-child(2n+2) {
-            color: $r;
+
+        section {
+            display: flex;
+
+            article {
+                border: $border $g;
+                text-align: center;
+                padding: 15px;
+            }
+
+            article:nth-child(2n+1) {
+                color: $b;
+            }
+
+            article:nth-child(2n+2) {
+                color: $r;
+            }
         }
     }
 }
