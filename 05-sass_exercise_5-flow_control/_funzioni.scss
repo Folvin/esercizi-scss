@@ -1,0 +1,10 @@
+@function rem($px) {
+    @return $px*0.0625+rem;
+}
+
+@function multipli($n){
+    @while $n<10 {
+        $n: $n+3;
+    }
+    @return $n
+}

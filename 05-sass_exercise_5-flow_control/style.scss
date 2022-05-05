@@ -1,0 +1,100 @@
+@use "variabili"as var;
+@use "funzioni"as funz;
+
+@mixin stile-article($text-color, $border, $font-size: 1rem) {
+    color: $text-color;
+    border: funz.rem(1) $border;
+    font-size: $font-size;
+}
+
+body {
+    margin: 0;
+    padding: var.$padding;
+
+    div {
+        @include stile-article(inherit, solid var.$r, );
+        padding: var.$padding;
+        text-align: center;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+
+        %h {
+            color: var.$g
+        }
+
+        h1 {
+            @extend %h;
+            text-decoration: underline solid funz.rem(1) var.$b;
+            text-underline-offset: funz.rem(7);
+        }
+
+        h2 {
+            @extend %h;
+            padding: 1rem;
+            border: solid red funz.rem(1);
+            align-self: center;
+        }
+
+        section {
+
+            &:nth-of-type(1) {
+                display: flex;
+
+                article {
+                    &:nth-child(2n + 1) {
+                        @include stile-article(var.$b, solid var.$g, );
+                        padding: var.$padding;
+                    }
+
+                    &:nth-child(2n + 2) {
+                        @include stile-article(var.$r, solid var.$g, );
+                        padding: var.$padding;
+                    }
+                }
+            }
+
+            &:nth-of-type(2) {
+                padding-top: var.$padding;
+                display: flex;
+                justify-content: space-between;
+
+                div {
+                    width: funz.rem(45);
+                    height: funz.rem(45);
+                    padding: 0;
+                    text-align: left;
+
+                    @each $var in 1rem 2rem 3rem {
+                        &.fs-#{$var} {
+                            font-size: $var;
+                        }
+                    }
+
+                    @for $i from 1 through 19 {
+                        &:nth-child(#{$i}) {
+
+                            @if $i==10 {
+                                color: var.$r;
+                                background-color: var.$b;
+                            }
+
+                            @else {
+                                background-color: darken($color: var.$wh, $amount: $i * 5%);
+                                color: lighten($color: var.$bl, $amount: $i * 5%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:nth-of-type(3) {
+        padding-top: var.$padding;
+
+        article {
+            @include stile-article(var.$g, solid var.$b, funz.rem(24))
+        }
+    }
+}
